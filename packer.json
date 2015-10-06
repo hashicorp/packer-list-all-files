@@ -1,0 +1,22 @@
+{
+  "builders": [
+    {
+      "type": "docker",
+      "image": "ubuntu",
+      "commit": true
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell-local",
+      "command": "env | sort"
+    },
+    {
+      "type": "shell-local",
+      "command": "find ."
+    }
+  ],
+  "push": {
+    "name": "hashicorp/list-all-files"
+  }
+}
